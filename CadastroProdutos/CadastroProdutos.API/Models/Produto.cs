@@ -24,7 +24,9 @@ namespace CadastroProdutos.API.Models
         [MaxLength(80)]
         public string ImagemUrl { get; set; }
         public int Estoque { get; set; }
-        public DateTime DataCadastro { get; set; }
+        public DateTime DataInclusao { get; set; }
+        public DateTime? DataAlteracao { get; set; }
+        public int Ativo { get; set; }
 
         public Categoria Categoria { get; set; }
         public int CategoriaId { get; set; }
