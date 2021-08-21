@@ -18,7 +18,10 @@ namespace CadastroProdutos.API.Migrations
                     CategoriaId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Nome = table.Column<string>(type: "varchar(80)", maxLength: 80, nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    DataInclusao = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    DataAlteracao = table.Column<DateTime>(type: "datetime(6)", nullable: true),
+                    Ativo = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -40,7 +43,9 @@ namespace CadastroProdutos.API.Migrations
                     ImagemUrl = table.Column<string>(type: "varchar(80)", maxLength: 80, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Estoque = table.Column<int>(type: "int", nullable: false),
-                    DataCadastro = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    DataInclusao = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    DataAlteracao = table.Column<DateTime>(type: "datetime(6)", nullable: true),
+                    Ativo = table.Column<int>(type: "int", nullable: false),
                     CategoriaId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>

@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CadastroProdutos.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210821050626_ScriptInicial")]
-    partial class ScriptInicial
+    [Migration("20210821192258_InserirRegistros")]
+    partial class InserirRegistros
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,6 +24,15 @@ namespace CadastroProdutos.API.Migrations
                     b.Property<int>("CategoriaId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    b.Property<int>("Ativo")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("DataAlteracao")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("DataInclusao")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -41,10 +50,16 @@ namespace CadastroProdutos.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<int>("Ativo")
+                        .HasColumnType("int");
+
                     b.Property<int>("CategoriaId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DataCadastro")
+                    b.Property<DateTime?>("DataAlteracao")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("DataInclusao")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Descricao")
