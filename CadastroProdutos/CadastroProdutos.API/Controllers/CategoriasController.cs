@@ -1,10 +1,8 @@
 ﻿using CadastroProdutos.API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace CadastroProdutos.API.Controllers
 {
@@ -23,6 +21,12 @@ namespace CadastroProdutos.API.Controllers
         public ActionResult<IEnumerable<Categoria>> Get()
         {
             return this.context.Categorias.AsNoTracking().ToList();
+        }
+
+        [HttpGet("Produtos")]
+        public ActionResult<IEnumerable<Categoria>> GetCategoriasProdutos()
+        {
+            return this.context.Categorias.Include(c => c.Produtos).ToList();
         }
 
         [HttpGet("{id}")]
