@@ -17,7 +17,6 @@ namespace CadastroProdutos.API.Models
         public string Descricao { get; set; }
 
         [Required]
-        [MaxLength(80)]
         public decimal Preco { get; set; }
 
         [Required]
